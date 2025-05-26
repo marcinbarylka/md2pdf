@@ -2,26 +2,26 @@
 
 **md2pdf** is a lightweight Python CLI tool for converting Markdown files to PDF using `WeasyPrint`. It includes basic CSS styling and is easy to use thanks to the `click` library.
 
-## ✨ Features
+## Features
 
 * 📄 Convert `.md` files to `.pdf`
 * 🌜 Built-in CSS styling (customizable)
 * ⚡ Fast and lightweight – runs in seconds
 * 🖥️ User-friendly command-line interface
 
-## 🔧 Installation
+## Installation
 
 ### Local development install
 
 ```bash
-git clone https://github.com/yourusername/md2pdf.git
+git clone https://github.com/marcinbarylka/md2pdf.git
 cd md2pdf
 pip install -e .
 ```
 
 > *Requires Python 3.9+.*
 
-## 🚀 Usage
+## Usage
 
 ```bash
 md2pdf input.md output.pdf
@@ -33,7 +33,7 @@ Example:
 md2pdf README.md README.pdf
 ```
 
-## 🧪 Requirements
+## Requirements
 
 * Python 3.9+
 * [WeasyPrint](https://weasyprint.org/) (installed via pip, but may require system dependencies – see below)
@@ -52,7 +52,7 @@ sudo apt install libpangocairo-1.0-0 libpangoft2-1.0-0 libgdk-pixbuf2.0-0 libffi
 brew install cairo pango gdk-pixbuf libffi
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 md2pdf/
@@ -63,16 +63,16 @@ md2pdf/
 └── README.md
 ```
 
-## 📌 Roadmap / TODO
+## Roadmap / TODO
 
 * [ ] Support for external CSS (`--style`)
 * [ ] Batch folder conversion
 * [ ] PDF metadata support
 * [ ] Custom HTML templates
 
-## 👨‍💻 Author
+## Author
 
-Created by \[Your Name].
+Created by Marcin Baryłka.
 
 ## 🛡 License
 
