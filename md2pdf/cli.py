@@ -1,7 +1,6 @@
 """Core functionality for converting Markdown to PDF."""
 
-import argparse
-
+import click
 from markdown import markdown
 from weasyprint import HTML
 
@@ -37,12 +36,17 @@ def convert_md_to_pdf(input_filename: str, output_filename: str) -> None:
     save_pdf(html_content, output_filename)
 
 
+@click.command()
+@click.argument("input_filename", type=click.Path(exists=True, dir_okay=False))
+@click.argument("output_filename", type=click.Path(writable=True, dir_okay=False))
+def cli(input_filename, output_filename):
+    """Convert a Markdown file to a PDF."""
+    try:
+        convert_md_to_pdf(input_filename, output_filename)
+        click.secho(f"✅ Converted {input_filename} → {output_filename}", fg="green")
+    except Exception as e:
+        click.secho(f"❌ Error: {e}", fg="red")
+
+
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Convert Markdown files to PDF.")
-    parser.add_argument("input", help="Input markdown file")
-    parser.add_argument("output", help="Output PDF file")
-
-    args = parser.parse_args()
-
-    convert_md_to_pdf(args.input, args.output)
-    print(f"Converted {args.input} to {args.output}")
+    cli()
