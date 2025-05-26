@@ -8,9 +8,17 @@ authors = [
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "weasyprint (>=65.1,<66.0)",
+    "markdown (>=3.8,<4.0)",
+    "click (>=8.2.1,<9.0.0)"
 ]
 
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.11.11"
+isort = "^6.0.1"
+
